@@ -32,6 +32,7 @@ const AddTrail = (props) => {
     };
 
     return <div>
+        <h3>Add Trail</h3>
         <form onSubmit={submitHandler}>
             <div>
                 <label>Trail Name : </label>
