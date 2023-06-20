@@ -19,6 +19,12 @@ const TrailModel = new mongoose.Schema(
             minLength: [3, "The description must be 3 or more characters"],
             maxLength: [500, "The description can't be over 500 characters"],
         },
+        location: {
+            type: String,
+            required: [true, "Location is required"],
+            minLength: [3, "The location must be 3 or more characters"],
+            maxLength: [100, "The location can't be over 100 characters"],
+        },
         difficalty: {
             type: Number,
         },
