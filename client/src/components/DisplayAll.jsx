@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 
 const DisplayAll = (props) => {
-    const [allTrails, setAllTrails] = useState({});
+    const [allTrails, setAllTrails] = useState([]);
 
     useEffect(() => {
         axios
@@ -19,9 +19,9 @@ const DisplayAll = (props) => {
             });
     }, []);
 
-    return <div>
-        {
-            allTrails.map((eachTrail, index) => (
+    return (
+        <div>
+            {allTrails.map((eachTrail, index) => (
                 <div key={index}>
                     <p><span style={{ fontWeight: "bold" }}>Trail Name : </span>{eachTrail.trailName}</p>
                     <p><span style={{ fontWeight: "bold" }}>Distance : </span>{eachTrail.distance}</p>
@@ -30,14 +30,13 @@ const DisplayAll = (props) => {
                     <p><span style={{ fontWeight: "bold" }}>Difficalty Level : </span>{eachTrail.difficalty}</p>
                     {
                         eachTrail.wheelchairAccess ?
-                        (<p><span style={{ fontWeight: "bold" }}>Wheelchair Accessibilirty : </span>Yes</p>)
-                        : 
-                        (<p><span style={{ fontWeight: "bold" }}>Wheelchair Accessibilirty : </span>No</p>)
+                        <p><span style={{ fontWeight: "bold" }}>Wheelchair Accessible : </span>Yes</p> :
+                        <p><span style={{ fontWeight: "bold" }}>Wheelchair Accessible : </span>No</p>
                     }
                 </div>
-            ))
-        } 
-    </div>;
+            ))}
+        </div>
+    );
 };
 
 export default DisplayAll;
