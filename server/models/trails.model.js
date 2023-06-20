@@ -10,7 +10,7 @@ const TrailModel = new mongoose.Schema(
         },
         distance: {
             type: Number,
-            required: [true, "Release year is required"],
+            required: [true, "Distance is required"],
             min: [1, "No trail shorter than 1 mile allowed"],
         },
         description: {
