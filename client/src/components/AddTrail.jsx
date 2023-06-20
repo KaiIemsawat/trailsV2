@@ -13,6 +13,7 @@ const AddTrail = (props) => {
         image: "",
     });
     const [errors, setErrors] = useState({});
+    const nav = useNavigate();
 
     const changeHandler = (e) => {
         setTrail({ ...trail, [e.target.name]: e.target.value });
@@ -24,6 +25,7 @@ const AddTrail = (props) => {
             .post("http://localhost:8000/api/addTrail", trail)
             .then((resp) => {
                 console.log(resp);
+                nav("/")
             })
             .catch((err) => {
                 console.log(err.response.data.errors);

@@ -17,6 +17,11 @@ const DisplayOne = (props) => {
         }).catch((err)=> {console.log(err)});
     }, []);
 
+    const deleteHandler =(id) => {
+        console.log(id);
+        axios.delete(`/api/deleteTrail/${id}`) // ! to continue
+    }
+
     return (
         <div>
             <h3>Trail's Details</h3>
