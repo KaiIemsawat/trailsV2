@@ -33,6 +33,10 @@ const DisplayAll = (props) => {
                         <p><span style={{ fontWeight: "bold" }}>Wheelchair Accessible : </span>Yes</p> :
                         <p><span style={{ fontWeight: "bold" }}>Wheelchair Accessible : </span>No</p>
                     }
+                    {
+                        eachTrail.image ?
+                        <img src={eachTrail.image} alt={eachTrail.trailName} style={{width:"30%"}}/> : null
+                    }
                 </div>
             ))}
         </div>

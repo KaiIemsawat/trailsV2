@@ -31,7 +31,36 @@ const AddTrail = (props) => {
             });
     };
 
-    return <div>AddTrail</div>;
+    return <div>
+        <form onSubmit={submitHandler}>
+            <div>
+                <label>Trail Name : </label>
+                <input type="text" onChange={changeHandler} name="trailName" value={trail.trailName}/>
+            </div>
+            <div>
+                <label>Distance : </label>
+                <input type="text" onChange={changeHandler} name="distance" value={trail.distance}/>
+            </div>
+            <div>
+                <label>Description : </label>
+                <input type="text" onChange={changeHandler} name="description" value={trail.description}/>
+            </div>
+            <div>
+                <label>Location : </label>
+                <input type="text" onChange={changeHandler} name="location" value={trail.location}/>
+            </div>
+            <div>
+                <span>Wheelchair accessibility : </span>
+                <input type="radio" onChange={changeHandler} name="wheelchairAccess" value={true}/><label>True</label>
+                <input type="radio" onChange={changeHandler} name="wheelchairAccess" value={false}/><label>False</label>
+            </div>
+            <div>
+                <label>Link Image : </label>
+                <input type="text" onChange={changeHandler} name="image" value={trail.image}/>
+            </div>
+            <button>submit</button>
+        </form>
+    </div>;
 };
 
 export default AddTrail;
