@@ -52,7 +52,7 @@ const AddTrail = (props) => {
             </div>
             <div>
                 <label>Description : </label>
-                <input type="text" onChange={changeHandler} name="description" value={trail.description}/>
+                <textarea onChange={changeHandler} name="description" value={trail.description}/>
                 {
                     errors.description ? <p>{errors.description.message}</p> : null
                 }
@@ -71,6 +71,16 @@ const AddTrail = (props) => {
                 {
                     errors.wheelchairAccess ? <p>{errors.wheelchairAccess.message}</p> : null
                 }
+            </div>
+            <div>
+                <label>Dificalty Level : </label>
+                <select onChange={changeHandler} name="difficalty" value={trail.difficalty}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
             <div>
                 <label>Link Image : </label>

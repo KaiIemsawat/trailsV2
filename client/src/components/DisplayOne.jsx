@@ -19,7 +19,14 @@ const DisplayOne = (props) => {
 
     const deleteHandler =(id) => {
         console.log(id);
-        axios.delete(`/api/deleteTrail/${id}`) // ! to continue
+        axios.delete(`http://localhost:8000/api/deleteTrail/${id}`)
+        .then((resp)=> {
+            console.log(resp);
+            nav("/")
+        })
+        .catch((err)=> {
+            console.log(err);
+        })
     }
 
     return (
@@ -39,6 +46,7 @@ const DisplayOne = (props) => {
                 oneTrail.image ?
                 <img src={oneTrail.image} alt={oneTrail.trailName} style={{width:"30%"}}/> : null
             }
+            <button onClick={()=> deleteHandler(oneTrail._id)}>Delete</button>
         </div>
     )
 }
